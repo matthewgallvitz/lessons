@@ -17,12 +17,15 @@ for i in range (9):
 #print(board[2][0])
 
 def get_user_coordinates():
-    answer = input("Where would you like to go?")   
-    print(answer)
-    if int(answer) > 9:
-        print("Sorry, but you cannot ask for a number over 9")
-    elif int(answer) < 1:
-        print("Sorry, but you cannot ask for a number under 1")
+    is_valid_number = False
+    while is_valid_number == False:
+        answer = input("Where would you like to go?")
+        if int(answer) > 9:
+            print("Sorry, but you cannot ask for a number over 9")
+        elif int(answer) < 1:
+            print("Sorry, but you cannot ask for a number under 1")
+        else:
+            is_valid_number = True
     map = {
         1: [0,0],
         2: [0,1],
@@ -35,4 +38,4 @@ def get_user_coordinates():
         9: [2,2],
     }
     return map[int(answer)]
-get_user_coordinates() 
+get_user_coordinates()
