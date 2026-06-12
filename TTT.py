@@ -38,4 +38,9 @@ def get_user_coordinates():
         9: [2,2],
     }
     return map[int(answer)]
+def display_board():
+    for row in board:
+        print(row)
+
+display_board()
 get_user_coordinates()
