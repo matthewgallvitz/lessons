@@ -1,7 +1,7 @@
 board = [
     ["","",""],
     ["","",""],
-    ["","",""],
+    ["x","",""],
     ]
 
 turn_1 = True
@@ -41,6 +41,12 @@ def get_user_coordinates():
 def display_board():
     for row in board:
         print(row)
-
+def player_placement():
+    user_coordinates = get_user_coordinates()
+    row = user_coordinates[0]
+    column = user_coordinates[1]
+    board[row][column] = "o"
+    
 display_board()
-get_user_coordinates()
+player_placement()
+display_board()
