@@ -34,7 +34,6 @@ board = [
     ["x","",""],
     ]
 display_board()
-player_placement()
 
 is_player_1_turn = True
 for i in range (9):
@@ -44,5 +43,6 @@ for i in range (9):
     else:
         player_number = 2
     print("player: "+ str(player_number))
+    player_placement()
+    display_board()
     is_player_1_turn = not is_player_1_turn
-display_board()
