@@ -34,8 +34,8 @@ def player_placement():
 board = [
     ["","",""],
     ["","",""],
-    ["x","",""],
-    ]
+    ["","",""],
+]
 display_board()
 
 is_player_1_turn = True
