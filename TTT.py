@@ -27,7 +27,10 @@ def player_placement():
     user_coordinates = get_user_coordinates()
     row = user_coordinates[0]
     column = user_coordinates[1]
-    board[row][column] = "o"
+    if is_player_1_turn is True:
+        board[row][column] = "x"
+    else:
+        board[row][column] = "o"
 board = [
     ["","",""],
     ["","",""],
