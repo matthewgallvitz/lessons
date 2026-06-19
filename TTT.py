@@ -28,14 +28,14 @@ def player_placement():
     row = user_coordinates[0]
     column = user_coordinates[1]
     board[row][column] = "o"
-    
-display_board()
-player_placement()
 board = [
     ["","",""],
     ["","",""],
     ["x","",""],
     ]
+display_board()
+player_placement()
+
 is_player_1_turn = True
 for i in range (9):
     player_number = None
