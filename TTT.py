@@ -1,21 +1,3 @@
-board = [
-    ["","",""],
-    ["","",""],
-    ["x","",""],
-    ]
-
-turn_1 = True
-
-for i in range (9):
-    player_number = None
-    if turn_1 is True:
-        player_number = 1
-    else:
-        player_number = 2
-    print("player: "+ str(player_number))
-    turn_1 = not turn_1
-#print(board[2][0])
-
 def get_user_coordinates():
     is_valid_number = False
     while is_valid_number == False:
@@ -49,4 +31,18 @@ def player_placement():
     
 display_board()
 player_placement()
+board = [
+    ["","",""],
+    ["","",""],
+    ["x","",""],
+    ]
+is_player_1_turn = True
+for i in range (9):
+    player_number = None
+    if is_player_1_turn is True:
+        player_number = 1
+    else:
+        player_number = 2
+    print("player: "+ str(player_number))
+    is_player_1_turn = not is_player_1_turn
 display_board()
