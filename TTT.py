@@ -28,7 +28,9 @@ def get_user_coordinates():
             print("Please choose again")
     return map[int(answer)]
 
-
+def check_winning_column():
+# make it so the system checks each number to find if the pieces match in a column
+    pass
 def display_board():
     for row in board:
         print(row)
