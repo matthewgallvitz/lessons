@@ -18,8 +18,14 @@ def get_user_coordinates():
             print("Sorry, but you cannot ask for a number over 9")
         elif int(answer) < 1:
             print("Sorry, but you cannot ask for a number under 1")
-        else:
+        user_coordinates = map[int(answer)]
+        row = user_coordinates[0]
+        column = user_coordinates[1]
+        if board[row][column] == "" :
             is_valid_number = True
+        else:
+            print("There is already a piece here")
+            print("Please choose again")
     return map[int(answer)]
 
 
