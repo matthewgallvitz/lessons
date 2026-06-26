@@ -1,13 +1,4 @@
 def get_user_coordinates():
-    is_valid_number = False
-    while is_valid_number == False:
-        answer = input("Where would you like to go?")
-        if int(answer) > 9:
-            print("Sorry, but you cannot ask for a number over 9")
-        elif int(answer) < 1:
-            print("Sorry, but you cannot ask for a number under 1")
-        else:
-            is_valid_number = True
     map = {
         1: [0,0],
         2: [0,1],
@@ -19,7 +10,19 @@ def get_user_coordinates():
         8: [2,1],
         9: [2,2],
     }
+    is_valid_number = False
+    while is_valid_number == False:
+        answer = input("Where would you like to go?")
+        print(map[int(answer)])
+        if int(answer) > 9:
+            print("Sorry, but you cannot ask for a number over 9")
+        elif int(answer) < 1:
+            print("Sorry, but you cannot ask for a number under 1")
+        else:
+            is_valid_number = True
     return map[int(answer)]
+
+
 def display_board():
     for row in board:
         print(row)
@@ -49,3 +52,4 @@ for i in range (9):
     player_placement()
     display_board()
     is_player_1_turn = not is_player_1_turn
+    print()
