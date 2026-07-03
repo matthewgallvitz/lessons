@@ -28,7 +28,13 @@ def get_user_coordinates():
             print("Please choose again")
     return map[int(answer)]
 
-def check_winning_column():
+def check_winning_column(board): 
+    print("top left corner",board[0][0]) 
+    print("middle left",board[1][0])
+    print("bottem left corner",board[2][0])
+# to do:
+# check cell that each is equal
+# start creating an if statment
 # make it so the system checks each number to find if the pieces match in a column
     pass
 def display_board():
@@ -61,3 +67,4 @@ for i in range (9):
     display_board()
     is_player_1_turn = not is_player_1_turn
     print()
+    check_winning_column(board)
