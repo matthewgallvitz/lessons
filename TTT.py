@@ -29,9 +29,17 @@ def get_user_coordinates():
     return map[int(answer)]
 
 def check_winning_column(board): 
-    print("top left corner",board[0][0]) 
-    print("middle left",board[1][0])
-    print("bottem left corner",board[2][0])
+    if(
+        #left column comparison
+        board[0][0] == board[1][0] and board[2][0] == board[0][0] or
+        #middle column comparison
+        board[0][1] == board[1][1] and board[2][1] == board[1][1] or
+        #right column comparison
+        board[0][2] == board[1][2] and board[2][2] == board[1][2]
+    ):
+        print("You Win!")
+    else:
+        print("keep playing!")
 # to do:
 # check cell that each is equal
 # start creating an if statment
