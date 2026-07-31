@@ -38,8 +38,10 @@ def check_winning_column(board):
         board[0][2] == board[1][2] and board[2][2] == board[1][2]
     ):
         print("You Win!")
+        print("Game Over...")
+        return True
     else:
-        print("keep playing!")
+        return False
 # to do:
 # check cell that each is equal
 # start creating an if statment
@@ -57,8 +59,8 @@ def player_placement():
     else:
         board[row][column] = "o"
 board = [
-    ["","",""],
-    ["","",""],
+    ["","x",""],
+    ["","x",""],
     ["","",""],
 ]
 display_board()
@@ -75,4 +77,6 @@ for i in range (9):
     display_board()
     is_player_1_turn = not is_player_1_turn
     print()
-    check_winning_column(board)
+    game_over = check_winning_column(board)
+    if game_over:
+        exit()
