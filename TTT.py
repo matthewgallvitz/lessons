@@ -28,20 +28,24 @@ def get_user_coordinates():
             print("Please choose again")
     return map[int(answer)]
 
-def check_winning_column(board): 
-    if(
-        #left column comparison
-        board[0][0] == board[1][0] and board[2][0] == board[0][0] or
-        #middle column comparison
-        board[0][1] == board[1][1] and board[2][1] == board[1][1] or
-        #right column comparison
-        board[0][2] == board[1][2] and board[2][2] == board[1][2]
-    ):
-        print("You Win!")
-        print("Game Over...")
-        return True
-    else:
+def check_winning_column(board):
+    for column in range(3):
+        Top_Piece = board[0][column]
+        Middle_Piece = board[1][column]
+        Bottom_Piece = board[2][column]
+        if Top_Piece == Middle_Piece and Middle_Piece == Bottom_Piece:
+            return True
         return False
+
+def check_row_win(board):
+    for row in board:
+        left_piece = row[0]
+        middle_piece = row[1]
+        right_piece = row[2]
+        if left_piece == middle_piece and left_piece == right_piece:
+            return True 
+    return False
+
 # to do:
 # check cell that each is equal
 # start creating an if statment
@@ -59,9 +63,9 @@ def player_placement():
     else:
         board[row][column] = "o"
 board = [
+    ["","x","x"],
     ["","x",""],
-    ["","x",""],
-    ["","",""],
+    ["","x","x"],
 ]
 display_board()
 
@@ -77,6 +81,7 @@ for i in range (9):
     display_board()
     is_player_1_turn = not is_player_1_turn
     print()
-    game_over = check_winning_column(board)
+    game_over = check_winning_column(board) or check_row_win(board)
     if game_over:
+        print("game over")
         exit()
