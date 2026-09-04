@@ -46,11 +46,17 @@ def check_row_win(board):
             return True 
     return False
 
-# to do:
-# check cell that each is equal
-# start creating an if statment
-# make it so the system checks each number to find if the pieces match in a column
-    pass
+def check_diagonal_win(board):
+    top_left_corner = board[0][0]
+    top_right_corner = board [0][3]
+    middle_piece = board[1][1]
+    bottom_left_corner = board[3][0]
+    bottom_right_corner = board[3][3]
+    if ((top_left_corner == middle_piece and bottom_right_corner == top_left_corner) or
+    (top_right_corner == middle_piece and top_right_corner == bottom_left_corner)):
+        return True
+    return False
+
 def display_board():
     for row in board:
         print(row)
@@ -81,7 +87,7 @@ for i in range (9):
     display_board()
     is_player_1_turn = not is_player_1_turn
     print()
-    game_over = check_winning_column(board) or check_row_win(board)
+    game_over = check_winning_column(board) or check_row_win(board) or check_diagonal_win(board)
     if game_over:
         print("game over")
         exit()
